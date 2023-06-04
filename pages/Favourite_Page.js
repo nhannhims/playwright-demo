@@ -16,7 +16,7 @@ export class Favourite_Page {
         txtProductName: () => new Control(this.#page, '//div[@class="item_name" and contains(text(),"%s")]', null),
     }
 
-    async verifyProductIsDispay(productName){
-        await expect(this.#elements.txtProductName().setDynamicLocator(productName).get()).toBeVisible()
+    async verifyProductIsDispay(product_name){
+        await expect(this.#elements.txtProductName().setDynamicLocator(product_name).get()).toBeVisible()
     }
 }

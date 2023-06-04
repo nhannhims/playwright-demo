@@ -16,12 +16,12 @@ export class Search_Page {
         txtProductName: () => new Control(this.#page, '//div[@class="search_result_area"]//div[@class="item_name" and contains(text(),"%s")]', null),
     }
 
-    async verifyProductIsDisPlay(productName){
-        await expect(this.#elements.txtProductName().setDynamicLocator(productName).get()).toBeVisible()
+    async verifyProductIsDisPlay(product_name){
+        await expect(this.#elements.txtProductName().setDynamicLocator(product_name).get()).toBeVisible()
     }
 
-    async clickGoToProductDetail(productName){
-        await this.#elements.txtProductName().setDynamicLocator(productName).get().click()
+    async clickGoToProductDetail(product_name){
+        await this.#elements.txtProductName().setDynamicLocator(product_name).get().click()
         await this.#page.waitForLoadState()
     }
 }

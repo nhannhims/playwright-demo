@@ -126,3 +126,14 @@ Constant & Enum : declaration with snake case (use uppercase letters) (Ex: WAIT_
 Function Name: first letter is lowercase and it is action (Ex selectMenuOnNavBar() { })
 
 ```
+
+## Script File
+```shell
+1. Name of file : [System]_[Function]_[...].spec.js
+2. Save to folder : /tests/[System]_[Function]_[...].spec.js
+3. In the file: import { test} from '@playwright/test'
+    - Use test.beforeEach(() => { }) : New test will perform the actions here first
+    - Use test.describe('[System] [Function] [...]', () => { }) : All script will be here
+    - Use test('[TC001] Verify ...', async({page}) => { }) : Write script at here 
+    ...
+```

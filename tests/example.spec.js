@@ -34,14 +34,11 @@ test.describe('FlyMee Function', () => {
     await FavouritePage.verifyProductIsDispay('エレファントソファー シェーズロング')
   });
   
-  test.only('TC0003: Verify Archive Color Page', async ({ page }) => {
+  test('TC0003: Verify Archive Color Page', async ({ page }) => {
     const HomePage = new Home_Page(page)
     const FilterPage = new Filter_Page(page)
     await HomePage.selectChildMenuOnNavBar(FLYMEE_MAIN_MENU.COLOUR, FLYMEE_COLOR_MENU.YELLOW)
     await FilterPage.verifyFilterSearchTitle(FLYMEE_FILTER_OPTION.YELLOW)
     await FilterPage.verifyFitlerNameDisplay(FLYMEE_FILTER_OPTION.YELLOW)
-    console.log(config.env.staging.url)
-    console.log(config.env.staging.username)
-    console.log(config.env.staging.password)
   });
 })
