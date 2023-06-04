@@ -7,6 +7,25 @@ https://code.visualstudio.com/download
 ```shell
 https://nodejs.org/en/download
 ```
+### Folder Structure
+```shell
+- fixtures
+    + download
+    + files
+        + csv
+        + excels
+        + images
+        + videos
+- modals
+- pages
+- supports
+    + browsers
+    + core
+    + navigation
+    + utils
+        + Enum
+- tests
+```
 
 ## Install all package dependencies
 ```shell
