@@ -1,0 +1,19 @@
+{
+  "name": "playright-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "report" : "npx playwright show-report",
+    "chrome-headed": "npx playwright test --project=chromium --headed",
+    "chrome": "npx playwright test --project=chromium",
+    "all-headed": "npx playwright test --headed",
+    "all": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.34.3"
+  }
+}
