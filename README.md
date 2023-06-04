@@ -76,3 +76,53 @@ export const config = {
 ```shell
 import { config } from '../[project-name]-config
 ```
+
+## Coding Convention
+```shell
+1. File name like as [Screen_Name]_Page.js
+
+2. Content of file
+export class [Screen_Name]_Page {
+    #page
+
+    /**
+     * 
+     * @param {import('@playwright/test').Page} page 
+     */
+    constructor(page){
+        this.#page = page
+    }
+
+    // All control at here
+    #elements = {
+        
+    }
+
+    // Function at here
+    async selectMainMenuOnNavBar() {
+        // Use element like this.#element.elementName()
+        await [execute action]
+    }
+}
+
+3. Import this file to use: import { [Screen_Name]_Page } from '../pages/[Screen-Name]_Page'
+
+4. Declaration and naming
+Element : 
+input Tag has prefix ipt (Ex: iptUserName)
+button Tag has prefix btn (Ex: btnLogin)
+label Tag has prefix lbl (Ex: lblUserName)
+another Tag with text has prefix txt (Ex: txtMessage)
+icon has prefix icon (Ex: iconFavourite)
+dropdown or combobox:
+    - Action [Select dropdown or combobox] has prefix drd (Ex: drdCity)
+    - Action [Select option] has prefix opt (Ex: optCity)
+....
+
+Variable: declaration with snake case (use lowercase letters) (Ex: product_name)
+
+Constant & Enum : declaration with snake case (use uppercase letters) (Ex: WAIT_TIMEOUT)
+
+Function Name: first letter is lowercase and it is action (Ex selectMenuOnNavBar() { })
+
+```
