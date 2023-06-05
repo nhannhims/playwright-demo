@@ -31,6 +31,10 @@ https://nodejs.org/en/download
 ```shell
 npm install
 ```
+## Install Playwright
+```shell
+npx playwright install
+```
 ## Run script with Chrome
 ```shell
 npm run chrome
