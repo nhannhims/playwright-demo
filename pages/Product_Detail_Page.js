@@ -1,3 +1,4 @@
+import { AddProductToCart } from '../modals/AddProductToCart'
 import { Control } from '../supports/core/Control'
 
 export class Product_Detail_Page {
@@ -17,5 +18,13 @@ export class Product_Detail_Page {
 
     async clickFavouriteIcon(){
         await this.#elements.iconFavourite().get().click()
+    }
+
+    /**
+     * 
+     * @param {AddProductToCart} data 
+     */
+    async addProductToCart(data){
+
     }
 }

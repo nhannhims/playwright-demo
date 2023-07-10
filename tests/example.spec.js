@@ -6,7 +6,7 @@ import { FLYMEE_COLOR_MENU, FLYMEE_FILTER_OPTION, FLYMEE_MAIN_MENU } from '../su
 import { Favourite_Page } from '../pages/Favourite_Page';
 import { Filter_Page } from '../pages/Filter_Page';
 import { Navigation } from '../supports/navigation/Navigation';
-import { config } from '../flymee-config';
+import { BrowserActions } from '../supports/browsers/BrowserActions';
 
 test.beforeEach(async ({page}) => {
   const navigation = new Navigation(page)
@@ -40,5 +40,14 @@ test.describe('FlyMee Function', () => {
     await HomePage.selectChildMenuOnNavBar(FLYMEE_MAIN_MENU.COLOUR, FLYMEE_COLOR_MENU.YELLOW)
     await FilterPage.verifyFilterSearchTitle(FLYMEE_FILTER_OPTION.YELLOW)
     await FilterPage.verifyFitlerNameDisplay(FLYMEE_FILTER_OPTION.YELLOW)
+  });
+
+  test('TC0004: Verify New Tab', async ({ page }) => {
+    const HomePage = new Home_Page(page)
+    const SearchPage = new Search_Page(page)
+    await HomePage.excuteSearchProduct('エレファントソファー シェーズロング')
+    await SearchPage.verifyProductIsDisPlay('エレファントソファー シェーズロング')
+    await SearchPage.clickGoToProductDetail('エレファントソファー シェーズロング')
+    const BrowserAction = new BrowserActions(page)
   });
 })
